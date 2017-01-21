@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script id="templateTest" type="text/template">
+		<div class="test"></div>
+	</script>
+	<script type="text/javascript" src="../src/token.js"></script>
+	<script type="text/javascript">
+		var template = document.getElementById('templateTest').innerHTML;
+		var tokenizer = new Token(template);
+
+		console.log(tokenizer.nextToken())
+	</script>
+</body>
+</html>

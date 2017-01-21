@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>str replace html template</title>
+</head>
+<body>
+	<div id="wrap"></div>
+<script type="text/javascript" src="str-replace-html-template.js"></script>
+	<script type="text/javascript">
+	var tpl = '<% for(var i = 0; i < this.posts.length; i++) {' +　
+		        'var post = this.posts[i]; %>' +
+		        '<% if(!post.expert){ %>' +
+		            '<span>post is null</span>' +
+		        '<% } else { %>' +
+		            '<a href="#"><% post.expert %> at <% post.time %></a>' +
+		        '<% } %>' +
+		    '<% } %>';
+		var test = new HtmlTamplate(tpl);
+		var html = test.render({
+			posts:[
+				{
+					expert: 'xxxfdsa',
+					time: 'wang'
+				},
+				{
+					expert: '',
+					time: 'wang'
+				},
+				{
+					expert: 'xxxfdsa',
+					time: 'wang'
+				},
+				{
+					expert: 'xxxfdsa2',
+					time: 'wang2'
+				},
+				{
+					expert: 'xxxfdsa3',
+					time: 'wang3'
+				}
+			]
+		})
+		console.log(html)
+		document.getElementById('wrap').innerHTML=html
+	</script>
+</body>
+</html>

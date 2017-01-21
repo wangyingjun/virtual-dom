@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+</head>
+<body>
+	<script src="./element.js"></script>
+	<script>
+		var li1 = Element('li', {class: 'item'}, ['Item1']),
+			li2 = Element('li', {class: 'item'}, ['Item2']);
+		var ul = Element('ul', {id: 'list'}, [
+				li1,
+				li2,
+				Element('li', {class: 'item'}, ['Item3'])
+			])
+		var ulRoot = ul.render();
+		document.body.appendChild(ulRoot)
+	</script>
+</body>
+</html>
